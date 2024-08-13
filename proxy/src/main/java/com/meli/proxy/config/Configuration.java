@@ -3,6 +3,7 @@ package com.meli.proxy.config;
 
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.*;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
@@ -40,6 +41,8 @@ public class Configuration {
         factory.getConnection().serverCommands()
                 .flushDb();
     }
+
+
 
     /*@Bean
     public LettuceConnectionFactory lettuceConnectionFactory() {
