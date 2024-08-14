@@ -1,10 +1,8 @@
 server:
-  port: 8090
-#spring.redis.host: 127.0.0.1
-#spring.redis.port: 6379
+  port: 8081
 spring:
   application:
-    name: proxy
+    name: api-proxy
   cloud:
     gateway:
       routes:
@@ -13,7 +11,6 @@ spring:
           predicates:
             - Path=/api1-service/**
           filters:
-          #- name: CustomGatewayFilterFactory
           - name: RequestRateLimiter
             args:
               redis-rate-limiter.replenishRate: 2
