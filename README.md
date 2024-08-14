@@ -1,5 +1,9 @@
 # meli-technical-test
 
+# Arquitectura de solución
+
+![diagrama_solucion.png](img%2Fdiagrama_solucion.png)
+
 # Implementación API Proxy
 
 Este proyecto se ha elaborado como un reto técnico utilizando diversas tecnologías para construir una arquitectura de microservicios que incluye:
@@ -35,12 +39,10 @@ El **Api1 y Api2** actúan como un microservicio dummy basico que expone un serv
 ### Ejecución
 
 Api1
-![img_1.png](img_1.png)
+![img_1.png](img%2Fimg_1.png)
 
 Api2
-![img_2.png](img_2.png)
-
-
+![img_2.png](img%2Fimg_2.png)
 
 ## 3. Proyecto proxy
 
@@ -54,23 +56,20 @@ En este apartado se utilizo la interface KeyResolve para definir los valores a l
 
 Aqui se configura uno de los filtros que permite limitar las cantidad maxima de 4 request de usuario por segundo.
 
-![img_3.png](img_3.png)
+![img_3.png](img%2Fimg_3.png)
 
 Para validar, se utilizo Jmeter como herramienta de prueba para realizar 10 peticiones concurrentes en un segundo.
 
-![img_4.png](img_4.png)
+![img_4.png](img%2Fimg_4.png)
 
 Con el fin de observar las estadisticas del proxy, se incluye la libreria **Spring Boot Actuator**, esta permite exponer una rest api donde podemos visualizar metricas relacionadas al proxy.
 
-![img_5.png](img_5.png)
+![img_5.png](img%2Fimg_5.png)
 
 ## 4. Proyecto statitics-control
 
 ### Descripción
 El componente **statitics-control** es un servicio que expone una API REST para consultar detalles adicionales sobre las solicitudes de entrada, las respuestas de salida y la duración en milisegundos de las solicitudes recibidas por el proxy
-
-### Ejecución
-
 
 ## 5. Redis
 
@@ -94,7 +93,7 @@ docker run --name redis  -p 6379:6379 -d -e ALLOW_EMPTY_PASSWORD=yes bitnami/red
 1. Instalar Nginx en tu máquina local.
 2. Configurar Nginx editando el archivo nginx.conf:
 
-```json
+```
 http {
   upstream proxy_api {
   server 127.0.0.1:8080; //Dirección instancia 1 proxy
@@ -108,4 +107,7 @@ server {
 }
 }
 ```
+Inicialmente se añadira las rutas de redirección hacias las instancias del api-proxy de manera manual.
+
+
 

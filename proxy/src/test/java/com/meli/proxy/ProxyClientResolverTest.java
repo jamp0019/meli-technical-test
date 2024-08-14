@@ -1,9 +1,9 @@
 package com.meli.proxy;
 
-import com.meli.proxy.service.impl.ProxyClientAddressAndPathResolver;
-import com.meli.proxy.service.impl.ProxyClientAddressResolver;
-import com.meli.proxy.service.impl.ProxyClientPathResolver;
-import com.meli.proxy.service.impl.ProxyClientTokenResolver;
+import com.meli.proxy.service.impl.resolver.ProxyClientAddressAndPathResolver;
+import com.meli.proxy.service.impl.resolver.ProxyClientAddressResolver;
+import com.meli.proxy.service.impl.resolver.ProxyClientPathResolver;
+import com.meli.proxy.service.impl.resolver.ProxyClientTokenResolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,4 +1,4 @@
-package com.meli.proxy.service.impl;
+package com.meli.proxy.service.impl.filter;
 
 import com.meli.proxy.model.Metric;
 import com.meli.proxy.service.IRedisService;
